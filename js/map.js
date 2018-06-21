@@ -32,8 +32,7 @@ var MAP_PIN_WIDTH = 50;
 var MAP_PIN_HEIGHT = 70;
 
 var map = document.querySelector('.map');
-var mapPinMain = map.querySelector('.map__pin--main');
-var mapPin = map.querySelectorAll('button[type=button]');
+//var mapPin = map.querySelectorAll('button[type=button]');
 var template = document.querySelector('template');
 var pins = document.querySelector('.map__pins');
 var templatePin = template.content.querySelector('.map__pin');
@@ -80,7 +79,7 @@ var getShuffledArray = function (array) {
 
 var getAvatarPath = function (avatarNumber) {
   return avatarNumber >= 9 ? AVATAR_PATH : AVATAR_PATH + '0';
-}
+};
 
 var renderFeatures = function (arrFeatures) {
   var fragmentFeatures = document.createDocumentFragment();
@@ -106,14 +105,14 @@ var renderPhotos = function (arrPhotos) {
 };
 
 var roomsText = function (renderObj) {
-  if (renderObj.offer.rooms == 1) {
+  if (renderObj.offer.rooms === 1) {
     return ' комната для ';
-  } else if (renderObj.offer.rooms == 5) {
+  } else if (renderObj.offer.rooms === 5) {
     return ' комнат для ';
   } else {
     return ' комнаты для ';
   }
-}
+};
 
 var renderCard = function (renderObj) {
   var card = templateCard.cloneNode(true);
@@ -134,11 +133,8 @@ var renderCard = function (renderObj) {
 
 var createObjects = function (quantity) {
   var objects = [];
-  var obj = {};
-  var numbersAvatar = [];
 
   for (var i = 0; i < quantity; i++) {
-    obj = {};
     var locationX = getRandomValue(LOCATION_X_MIN, LOCATION_X_MAX);
     var locationY = getRandomValue(LOCATION_Y_MIN, LOCATION_Y_MAX);
     var avatarNumber = getUniqueValueFromArray(AVATAR);
@@ -152,7 +148,7 @@ var createObjects = function (quantity) {
         address: locationX + ', ' + locationY,
         price: getRandomValue(PRICE_MIN, PRICE_MAX),
         type: getRandomValueFromArray(TYPES),
-        rooms: getRandomValue(ROOMS_MIN, PRICE_MAX),
+        rooms: getRandomValue(ROOMS_MIN, ROOMS_MAX),
         guests: getRandomValue(GUESTS_MIN, GUESTS_MAX),
         checkin: getRandomValueFromArray(TIMES),
         checkout: getRandomValueFromArray(TIMES),
@@ -172,12 +168,10 @@ var createObjects = function (quantity) {
 
 var renderPin = function (pin) {
   var pinElement = templatePin.cloneNode(true);
-  
   pinElement.style.left = pin.location.x - MAP_PIN_WIDTH / 2 + 'px';
   pinElement.style.top = pin.location.y - MAP_PIN_HEIGHT + 'px';
   pinElement.querySelector('img').src = pin.author.avatar;
   pinElement.querySelector('img').alt = pin.offer.title;
-
   return pinElement;
 };
 
@@ -196,5 +190,6 @@ var paintPins = function () {
 
 var templateCard = template.content.querySelector('.map__card');
 var mapFiltersContainer = document.querySelector('.map__filters-container');
+
 paintPins();
 map.insertBefore(renderCard(offers[0]), mapFiltersContainer);
