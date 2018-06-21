@@ -32,7 +32,6 @@ var MAP_PIN_WIDTH = 50;
 var MAP_PIN_HEIGHT = 70;
 
 var map = document.querySelector('.map');
-//var mapPin = map.querySelectorAll('button[type=button]');
 var template = document.querySelector('template');
 var pins = document.querySelector('.map__pins');
 var templatePin = template.content.querySelector('.map__pin');
