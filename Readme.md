@@ -1,7 +1,7 @@
 # Личный проект «Кексобукинг» [![Build status][travis-image]][travis-url]
 
 * Студент: [Евгения Гусакова](https://up.htmlacademy.ru/javascript/14/user/223524).
-* Наставник: `Неизвестно`.
+Наставник: [Даниил Оношко](https://htmlacademy.ru/profile/id154426).
 
 ---
 
