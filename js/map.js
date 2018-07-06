@@ -83,12 +83,11 @@ var getAvatarPath = function (avatarNumber) {
 var renderFeatures = function (arrFeatures) {
   var fragmentFeatures = document.createDocumentFragment();
   var newFeatureElement;
-
-  for (var i = 0; i < arrFeatures.length; i++) {
+  arrFeatures.forEach(function (el) {
     newFeatureElement = document.createElement('li');
-    newFeatureElement.className = 'popup__feature popup__feature--' + arrFeatures[i];
+    newFeatureElement.className = 'popup__feature popup__feature--' + el;
     fragmentFeatures.appendChild(newFeatureElement);
-  }
+  });
   return fragmentFeatures;
 };
 
