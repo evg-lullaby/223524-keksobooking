@@ -95,7 +95,7 @@ var renderFeatures = function (arrFeatures) {
 var renderPhotos = function (photos) {
   var photosContainer = document.createDocumentFragment();
   var templatePhoto = template.content.querySelector('.popup__photo');
-  photos.forEach(function (el) {
+  photos.forEach(function () {
     var photoElement = templatePhoto.cloneNode(true);
     photoElement.src = photos[i];
     photosContainer.appendChild(photoElement);
