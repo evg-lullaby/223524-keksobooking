@@ -181,9 +181,9 @@ var offers = createObjects(OFFERS_NUMBER);
 
 var paintPins = function () {
   var fragmentPin = document.createDocumentFragment();
-  for (var i = 0; i < offers.length; i++) {
-    fragmentPin.appendChild(renderPin(offers[i]));
-  }
+  offers.forEach(function (el) {
+    fragmentPin.appendChild(renderPin(el));
+  });
   pins.appendChild(fragmentPin);
 };
 
