@@ -92,12 +92,12 @@ var renderFeatures = function (arrFeatures) {
   return fragmentFeatures;
 };
 
-var renderPhotos = function (arrPhotos) {
+var renderPhotos = function (photos) {
   var photosContainer = document.createDocumentFragment();
   var templatePhoto = template.content.querySelector('.popup__photo');
-  for (var i = 0; i < arrPhotos.length; i++) {
+  for (var i = 0; i < photos.length; i++) {
     var photoElement = templatePhoto.cloneNode(true);
-    photoElement.src = arrPhotos[i];
+    photoElement.src = photos[i];
     photosContainer.appendChild(photoElement);
   }
   return photosContainer;
