@@ -110,7 +110,6 @@ var roomsText = function (renderObj) {
   if (renderObj.offer.rooms === 5) {
     return ' комнат для ';
   }
-  
   return ' комнаты для ';
 };
 
