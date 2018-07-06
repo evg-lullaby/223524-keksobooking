@@ -184,6 +184,7 @@ var paintPins = function () {
   offers.forEach(function (el) {
     fragmentPin.appendChild(renderPin(el));
   });
+  
   pins.appendChild(fragmentPin);
 };
 
