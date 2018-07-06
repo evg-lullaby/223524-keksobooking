@@ -95,22 +95,22 @@ var renderFeatures = function (arrFeatures) {
 var renderPhotos = function (photos) {
   var photosContainer = document.createDocumentFragment();
   var templatePhoto = template.content.querySelector('.popup__photo');
-  for (var i = 0; i < photos.length; i++) {
+  photos.forEach(function (el) {
     var photoElement = templatePhoto.cloneNode(true);
     photoElement.src = photos[i];
     photosContainer.appendChild(photoElement);
-  }
+  });
   return photosContainer;
 };
 
 var roomsText = function (renderObj) {
   if (renderObj.offer.rooms === 1) {
     return ' комната для ';
-  } else if (renderObj.offer.rooms === 5) {
+  } 
+  if (renderObj.offer.rooms === 5) {
     return ' комнат для ';
-  } else {
-    return ' комнаты для ';
-  }
+  } 
+  return ' комнаты для ';
 };
 
 var renderCard = function (renderObj) {
