@@ -95,7 +95,7 @@ var renderFeatures = function (arrFeatures) {
 var renderPhotos = function (photos) {
   var photosContainer = document.createDocumentFragment();
   var templatePhoto = template.content.querySelector('.popup__photo');
-  photos.forEach(function () {
+  photos.forEach(function (i) {
     var photoElement = templatePhoto.cloneNode(true);
     photoElement.src = photos[i];
     photosContainer.appendChild(photoElement);
@@ -106,10 +106,12 @@ var renderPhotos = function (photos) {
 var roomsText = function (renderObj) {
   if (renderObj.offer.rooms === 1) {
     return ' комната для ';
-  } 
+  }
+  
   if (renderObj.offer.rooms === 5) {
     return ' комнат для ';
-  } 
+  }
+  
   return ' комнаты для ';
 };
 
